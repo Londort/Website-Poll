@@ -35,7 +35,7 @@ body {
   align-items: center;
 }
 
-.carousel-item h2 {
+.carousel-item h2, .summ-component h2 {
   margin-bottom: 3rem;
   font-size: 2rem;
   line-height: 120%;
@@ -69,4 +69,12 @@ body {
   -10px 0px 13px -7px #fff, 
   10px 0px 13px -7px #fff;
   letter-spacing: 0.2px;
+}
+.summ-component{
+  width: 100wh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

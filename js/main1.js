@@ -1,8 +1,9 @@
+"use strict"
 
-
+import { summComponent } from "./summComponent.js";
+import { slideComponent } from "./slideComponent.js";
 // V1 -----------------
 
-import { slideComponent } from "./slideComponent.js";
 const carouselTrack = document.querySelector(".carousel-track");
 const nextBtn = document.querySelector(".nextBtn");
 
@@ -17,7 +18,7 @@ const slideWidth = slides[0].offsetWidth;
 nextBtn.addEventListener("click", () => {
     slideIndex++;
     if (slideIndex > slides.length - 1) {
-        return;
+        document.querySelector('.wrapper').innerHTML = summComponent();
     }
     carouselTrack.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
 });
