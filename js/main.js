@@ -1,41 +1,70 @@
-import { slideContent } from './slideContent.js';
-import { slideComponent } from './slideComponent.js';
+"use strict"
 
-const carouselTrack = document.querySelector('.carousel-track');
-const prevButton = document.querySelector('.carousel-prev');
-const nextButton = document.querySelector('.carousel-next');
-const slides = document.querySelectorAll('.carousel-item');
+import { slideComponent } from "./components/slideComponent.js";
+import { sliderCycleHandler } from "./handlers/sliderCycleHandler.js";
 
-let slideIndex = 0;
+// Insert slide content into carousel
+const carouselTrack = document.querySelector(".carousel-track");
+carouselTrack.innerHTML = slideComponent();
 
-function showSlide(n) {
-  slides.forEach((slide) => {
-    slide.classList.remove('active');
-  });
-  slides[n].classList.add('active');
-}
+// Handling carousel
+sliderCycleHandler();
 
-function nextSlide() {
-  slideIndex++;
-  if (slideIndex > slides.length - 1) {
-    slideIndex = 0;
-  }
-  showSlide(slideIndex);
-}
+// Handle next button click to cycle through slides
+// let slideIndex = 0;
+// const slides = document.querySelectorAll(".carousel-item");
+// const slideWidth = slides[0].offsetWidth;
 
-function prevSlide() {
-  slideIndex--;
-  if (slideIndex < 0) {
-    slideIndex = slides.length - 1;
-  }
-  showSlide(slideIndex);
-}
+// nextBtn.addEventListener("click", () => {
+//     slideIndex++;
+//     if (slideIndex > slides.length - 1) {
+//         document.querySelector('.wrapper').innerHTML = summComponent();
+//     }
+//     carouselTrack.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
+// });
 
-slideContent.forEach((slide) => {
-  carouselTrack.innerHTML += slideComponent(slide);
-});
+// V2 -----------------
 
-slides[slideIndex].classList.add('active');
+// import { slideComponent } from "./slideComponent.js";
 
-nextButton.addEventListener('click', nextSlide);
-prevButton.addEventListener('click', prevSlide);
+// const form = document.querySelector("form");
+// const carouselTrack = document.querySelector(".carousel-track");
+// const nextBtn = document.querySelector(".nextBtn");
+
+// let currentPosition = 0;
+
+// carouselTrack.innerHTML = slideComponent();
+
+// function handleNext() {
+//     const currentSlide = document.querySelectorAll(".carousel-item")[currentPosition];
+//     const inputs = currentSlide.querySelectorAll("input");
+//     const responses = Array.from(inputs).filter(input => input.checked).map(input => input.value);
+
+//     localStorage.setItem(`question-${currentPosition}`, JSON.stringify(responses));
+
+//     currentPosition++;
+//     carouselTrack.style.transform = `translateX(-${currentPosition * 100}%)`;
+//     nextBtn.disabled = true;
+
+//     if (currentPosition === document.querySelectorAll(".carousel-item").length - 1) {
+//         nextBtn.textContent = "Submit";
+//     }
+// }
+
+// nextBtn.addEventListener("click", () => {
+//     handleNext();
+
+//     if (currentPosition === document.querySelectorAll(".carousel-item").length) {
+//         form.submit();
+//     }
+// });
+
+// form.addEventListener("submit", () => {
+//     localStorage.clear();
+// });
+
+
+
+
+
+
