@@ -1,5 +1,4 @@
 import { summComponent } from "../components/summComponent.js";
-import { localStorageResponseHandler } from "./responseHandler.js";
 
 function sliderCycleHandler() {
     let slideIndex = 0;
