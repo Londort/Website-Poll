@@ -3,7 +3,7 @@ import { slideContent } from "./slideContent.js";
 function slideComponent() {
   const slides = slideContent.map((slide, index) => `
     <div class="carousel-item${index === 0 ? " active" : ""}">
-      <h2>${slide.question}</h2>
+      <h2 class="slide-title">${slide.question}</h2>
       <div class="form-group">
         ${slide.answers.map(answer => `
           <div class="form-check">

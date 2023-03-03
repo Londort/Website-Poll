@@ -1,4 +1,5 @@
 import { summComponent } from "../components/summComponent.js";
+import { localStorageResponseHandler } from "./responseHandler.js";
 
 function sliderCycleHandler() {
     let slideIndex = 0;
@@ -10,11 +11,9 @@ function sliderCycleHandler() {
 
     nextBtn.addEventListener("click", () => {
         slideIndex++;
+
         if (slideIndex > slides.length - 1) {
             document.querySelector('.wrapper').innerHTML = summComponent();
-        }
-        if (summary) {
-            slideIndex = 0;
         }
 
         carouselTrack.style.transform = `translateX(-${slideIndex * slideWidth}px)`;

@@ -2,6 +2,7 @@
 
 import { slideComponent } from "./components/slideComponent.js";
 import { sliderCycleHandler } from "./handlers/sliderCycleHandler.js";
+import { localStorageResponseHandler } from "./handlers/responseHandler.js";
 
 // Insert slide content into carousel
 const carouselTrack = document.querySelector(".carousel-track");
@@ -9,6 +10,9 @@ carouselTrack.innerHTML = slideComponent();
 
 // Handling carousel
 sliderCycleHandler();
+
+// Handling localStorage
+localStorageResponseHandler();
 
 // Handle next button click to cycle through slides
 // let slideIndex = 0;
