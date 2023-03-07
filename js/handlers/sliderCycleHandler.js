@@ -9,6 +9,7 @@ function sliderCycleHandler() {
     const nextBtn = document.querySelector(".nextBtn");
 
     nextBtn.addEventListener("click", () => {
+        
         responseHandler();
 
         currentSlide++;
@@ -19,7 +20,6 @@ function sliderCycleHandler() {
             });
             slides[currentSlide].classList.add("active");
         }
-        
 
         if (currentSlide > slides.length - 1) {
             document.querySelector('.wrapper').innerHTML = summComponent();
