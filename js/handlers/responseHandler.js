@@ -5,9 +5,10 @@ export function responseHandler() {
 
     let responses = [];
     let responsesObj = {};
+    const question = activeSlide.querySelector(".slide-title").textContent;
 
     if (activeSlide) {
-        const question = activeSlide.querySelector(".slide-title").textContent;
+        
         responsesObj.question = question;
         for (let i = 0; i < answers.length; i++) {
             if (answers[i].checked) {

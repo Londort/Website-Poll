@@ -10,20 +10,19 @@ function sliderCycleHandler() {
 
     nextBtn.addEventListener("click", () => {
         
+        // Handling responses
         responseHandler();
 
         currentSlide++;
-
         if (currentSlide <= slides.length - 1) {
             slides.forEach(slide => {
                 slide.classList.remove("active");
             });
             slides[currentSlide].classList.add("active");
-        }
-
-        if (currentSlide > slides.length - 1) {
+        } else if (currentSlide > slides.length - 1) {
             document.querySelector('.wrapper').innerHTML = summComponent();
         }
+        
         carouselTrack.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
 
     });
