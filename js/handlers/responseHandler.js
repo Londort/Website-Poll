@@ -1,9 +1,10 @@
-export function responseHandler() {
+let responses = [];
+function responseHandler() {
 
     const activeSlide = document.querySelector(".active");
     const answers = document.querySelectorAll(".form-check-input");
 
-    let responses = [];
+    // let responses = [];
     let responsesObj = {};
     const question = activeSlide.querySelector(".slide-title").textContent;
 
@@ -15,8 +16,12 @@ export function responseHandler() {
                 responsesObj.answer = answers[i].value;
             }
         }
+        
         responses.push(responsesObj);
     }
 
     console.log(responses);
 }
+
+export { responseHandler };
+export { responses };
